@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.7s ease;
+    font-family: 'Poppins', sans-serif; /* Added font family */
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(87, 161, 164), rgb(244, 75, 14));
+}
+
+.calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.9);
+}
+
+.theme-toggler {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #141212;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler.active {
+    color: #333;
+}
+
+.theme-toggler.active::before {
+    background-color: #fff;
+}
+
+.theme-toggler::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Changed translate to left */
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+
+#display {
+    margin: 20px 20px 10; /* Adjusted margin */
+    height: 100px;
+    width: auto;
+    max-width: 250px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    overflow-x: auto;
+}
+
+#display::-webkit-scrollbar {
+    display: none; /* Removed scrollbar */
+}
+
+input{
+    width: 330px;
+    border: none;
+    padding: 24px;
+    margin: 0px;
+    background: transparent;
+    box-shadow: 0px 3px 15px rgba(180, 180, 180, 0.1); /* Corrected rgbs to rgba */
+    font-size: 40px;
+    text-align: right;
+    cursor: pointer;
+    background-color: rgb(236, 238, 247);
+}
+
+input::placeholder{
+    color: #030303;
+}
+
+button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: transparent;
+    color: #141212;
+    font-size: 20px;
+    box-shadow: -8px -8px 15px rgba(0, 0, 0, 0.2); /* Changed shadow color to black */
+    cursor: pointer;
+}
+.equalBtn{
+    background-color: #91bacb;
+    color: #372685;
+}
+
+.operator{
+    color: #1a5155;
+}
+
+
+/* For Dark Mode  */
+.calculator.dark button {
+    color: wheat;
+}
+.calculator.dark input {
+    color: white;
+    background-color: rgb(33, 33, 30);
+}
+.calculator.dark {
+    background-color: #060606;
+}
+.calculator.dark input::placeholder{
+    color: white;
+}
+.calculator.dark .equalBtn {
+    background-color: #fb7c14;
+    color: #10100f;
+}
+.calculator.dark .operator {
+    color: #afd71d;
+}
+.calculator.dark button {
+    color: wheat;
+box-shadow: 0px 3px 15px rgba(233, 230, 230, 0.2); /* Corrected rgbs to rgba */
+}
+
